@@ -8,7 +8,7 @@ const { user } = useAuthContext();
 
   return (
     <div>
-<h1>profile.</h1>
+<h1>Profile.</h1>
 <div className={styles.profile}>
 <h2>Hello {user}</h2>
 </div>
