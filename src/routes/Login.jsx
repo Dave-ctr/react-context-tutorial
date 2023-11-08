@@ -1,25 +1,26 @@
-import React  from 'react';
 import { useState } from "react";
-import styles from '@/styles/Login.module.css';
-import { useAuthContext } from '@/context/AuthContext';
-import { useNavigate, useLocation } from 'react-router-dom';
-import Header from '@/components/Header';
+import { useLocation, useNavigate } from "react-router-dom";
 
-function Login() {
+import styles from "@/styles/Login.module.css";
+import { useAuthContext } from "@/context/AuthContext";
+import Header from "@/components/Header";
 
-const [username, setUsername] = useState('')
-const { login } = useAuthContext();
-const navigate = useNavigate();
-const location = useLocation();
-const from = location.state?.pathname || '/';
-console.log(location);
-const handleSubmit = (e) => {
-  e.preventDefault()
-  if (!username) return
- login(username)
-setUsername('')
- navigate(from, {replace: true })
-}
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const { login } = useAuthContext();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.pathname || "/";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!username) return;
+    login(username);
+    setUsername("");
+    navigate(from, { replace: true });
+  };
 
   return (
     <div>
@@ -41,6 +42,6 @@ setUsername('')
       </div>
     </div>
   );
-}
+};
 
 export default Login;

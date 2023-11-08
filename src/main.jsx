@@ -1,19 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-import TodoApp from '@/components/TodoApp';
+import TodoApp from "@/components/TodoApp";
 
-import '@/styles/app.css';
+import "@/styles/app.css";
 // import './styles/app.css';
 
-import { BrowserRouter } from 'react-router-dom';
-
-const domContainer = document.getElementById('root');
+const domContainer = document.getElementById("root");
 const root = ReactDOM.createRoot(domContainer);
 root.render(
   <React.StrictMode>
-  <BrowserRouter>
-  <TodoApp />
-  </BrowserRouter>
+    <BrowserRouter>
+      <TodoApp />
+    </BrowserRouter>
   </React.StrictMode>
 );

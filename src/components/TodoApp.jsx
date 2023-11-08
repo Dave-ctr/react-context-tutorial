@@ -7,8 +7,7 @@ import Profile from "@/routes/Profile";
 import NotMatch from "@/routes/NotMatch";
 import Layout from "@/components/Layout";
 import SinglePage from "@/routes/SinglePage";
-import ProtectedRoute from "./ProtectedRoute";
-
+import ProtectedRoute from "@/components/ProtectedRoute";
 
 const TodoApp = () => {
   return (
@@ -23,8 +22,6 @@ const TodoApp = () => {
         <Route
           path="about"
           element={<About />}>
-          {/*<Route path="about-app" element={<AboutPage1  />} />
-  <Route path="about-developer" element={<AboutPage2  />} />*/}
           <Route
             path=":slug"
             element={<SinglePage />}

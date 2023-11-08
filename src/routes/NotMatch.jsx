@@ -1,11 +1,8 @@
-import React from 'react';
-
-function NotMatch() {
+const NotMatch = () => {
   return (
     <div>
-      <p>Not Found!!</p>
+      <p>Not found!</p>
     </div>
   );
-}
-
+};
 export default NotMatch;
