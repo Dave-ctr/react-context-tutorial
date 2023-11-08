@@ -54,7 +54,7 @@ const TodoItem = ({ itemProp }) => {
           />
         </button>
         )}
-      {/* <button onClick={() => delTodo(itemProp.id)}>
+      {/*<button onClick={() => delTodo(itemProp.id)}>
           <FaTrash style={{ color: '#5e5e5e', fontSize: '16px' }} />
         </button>
         <span style={itemProp.completed ? completedStyle : null}>
@@ -68,8 +68,7 @@ const TodoItem = ({ itemProp }) => {
         className={styles.textInput}
         style={editMode}
         onKeyDown={handleUpdatedDone}
-      />
-      */}
+        />*/}
     </li>
   );
 };

@@ -19,9 +19,9 @@ const handleLogout = () => {
 }
 
   return (
-    <>
+    <div>
       <nav className="navbar">
-        {/*<ul>
+        {/*}
 {links.map((link) => {
   return (
     <li key={link.text}>
@@ -38,8 +38,7 @@ const handleLogout = () => {
       </NavLink>
     </li>
   );
-})}
-</ul>*/}
+})}*/}
         <ul>
           {links.map((link) => {
             return (
@@ -50,12 +49,10 @@ const handleLogout = () => {
                       <NavLink to={link.path}>{link.text}</NavLink>
                     </li>
                   )
-                ) : link.path === 'profile' ? (
+                ) : link.path === "profile" ? (
                   user && (
                     <li>
-                    <NavLink to={link.path}>
-                    {link.text}
-                    </NavLink>
+                      <NavLink to={link.path}>{link.text}</NavLink>
                     </li>
                   )
                 ) : (
@@ -66,15 +63,20 @@ const handleLogout = () => {
               </React.Fragment>
             );
           })}
-        </ul>
+        {!user && (
+          <li className="log-in">
+            <span>Log in to edit to-dos</span>
+          </li>
+        )}
         {user && (
           <div className="logout">
             <p>{user}</p>
             {<button onClick={handleLogout}>Logout</button>}
           </div>
         )}
-      </nav>
-    </>
+          </ul>
+          </nav>
+    </div>
   );
 }
 

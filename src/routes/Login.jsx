@@ -9,14 +9,14 @@ function Login() {
 const [username, setUsername] = useState('')
 const { login } = useAuthContext();
 const navigate = useNavigate();
-const location = useLocation()
-const from = location.state?.pathname || '/'
+const location = useLocation();
+const from = location.state?.pathname || '/';
 console.log(location);
 const handleSubmit = (e) => {
   e.preventDefault()
   if (!username) return
  login(username)
- setUsername('')
+setUsername('')
  navigate(from, {replace: true })
 }
 
@@ -34,7 +34,7 @@ const handleSubmit = (e) => {
       <button>Login</button>
       </form>
       </div>
-    </div>
+  </div>
   );
 }
 
