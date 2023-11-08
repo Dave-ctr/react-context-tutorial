@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from '@/styles/Login.module.css';
 import { useAuthContext } from '@/context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Header from '@/components/Header';
 
 function Login() {
 
@@ -22,19 +23,23 @@ setUsername('')
 
   return (
     <div>
-      <h1>Login</h1>
+      <Header>
+        <h1>Login</h1>
+      </Header>
       <div className={styles.formWrapper}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-      <input
-      type="text"
-      placeholder='username'
-      value={username}
-      onChange={(e) => setUsername(e.target.value)}
-      />
-      <button>Login</button>
-      </form>
+        <form
+          className={styles.form}
+          onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <button>Login</button>
+        </form>
       </div>
-  </div>
+    </div>
   );
 }
 
