@@ -17,7 +17,11 @@ const TodoApp = () => {
         element={<Layout />}>
         <Route
           index
-          element={<Home />}
+          element={   
+            <ProtectedRoute>
+            <Home  /> 
+            </ProtectedRoute>
+            }
         />
         <Route
           path="about"
